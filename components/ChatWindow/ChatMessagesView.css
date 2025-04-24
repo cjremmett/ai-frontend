@@ -1,0 +1,18 @@
+.MessagesView {
+  width:150px;
+  height:150px;
+  line-height:3em;
+  overflow:scroll;
+  padding:5px;
+  background-color: white;
+}
+
+.UserMessage {
+  color: blue;
+  font-weight: bold;
+}
+
+.SystemMessage {
+  color: green;
+  font-weight: bold;
+}
