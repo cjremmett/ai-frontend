@@ -1,9 +1,9 @@
 .MessagesView {
-  width:150px;
-  height:150px;
-  line-height:3em;
+  margin:auto;
+  width: 50%;
+  height:45em;
+  line-height:2em;
   overflow:scroll;
-  padding:5px;
   background-color: white;
 }
 
