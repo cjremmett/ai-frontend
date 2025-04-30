@@ -4,3 +4,7 @@ import { io } from 'socket.io-client';
 const URL = 'https://cjremmett.com/flask';
 
 export const socket = io(URL);
+
+socket.on("connect_error", (err) => {
+    console.log(`connect_error due to ${err.message}`);
+  });

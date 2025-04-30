@@ -1,12 +1,13 @@
+'use client'
 
 import React, { useState, useEffect } from 'react';
 import ChatWindow from "@/components/ChatWindow/ChatWindow";
 import styles from "./page.module.css";
 import { socket } from '../socket';
-import { ConnectionState } from './components/ConnectionState';
-import { ConnectionManager } from './components/ConnectionManager';
-import { Events } from "./components/Events";
-import { MyForm } from './components/MyForm';
+import { ConnectionState } from '../components/ConnectionState';
+import { ConnectionManager } from '../components/ConnectionManager';
+import { Events } from "../components/Events";
+import { MyForm } from '../components/MyForm';
 
 export default function Home() {
   const [isConnected, setIsConnected] = useState(socket.connected);
@@ -40,6 +41,10 @@ export default function Home() {
     <>
       <h1 className={ styles.cjremmett_header}><a className = { styles.cjremmett_link } href="https://cjremmett.com">cjremmett.com</a></h1>
       <ChatWindow />
+      <ConnectionState isConnected={ isConnected } />
+      <Events events={ fooEvents } />
+      <ConnectionManager />
+      <MyForm />
     </>
   );
 }
