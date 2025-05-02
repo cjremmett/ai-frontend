@@ -1,9 +1,8 @@
 import { io } from 'socket.io-client';
 
-// "undefined" means the URL will be computed from the `window.location` object
-const URL = 'https://cjremmett.com/flask';
+const URL = 'https://cjremmett.com';
 
-export const socket = io(URL);
+export const socket = io(URL, {path: "/flask/socket.io"});
 
 socket.on("connect_error", (err) => {
     console.log(`connect_error due to ${err.message}`);
