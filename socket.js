@@ -5,5 +5,9 @@ const URL = 'https://cjremmett.com';
 export const socket = io(URL, {path: "/flask/socket.io"});
 
 socket.on("connect_error", (err) => {
-    console.log(`connect_error due to ${err.message}`);
-  });
+  console.log(`connect_error due to ${err.message}`);
+});
+
+socket.on("server_message", (data) => {
+  console.log('Server message received.');
+});
