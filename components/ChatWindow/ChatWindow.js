@@ -33,11 +33,12 @@ export default function ChatWindow() {
     // Listen for incoming messages via WebSocket
     socket.on('server_message', (data) => {
       try {
-        console.log(String(data));
+        console.log('Incoming socket.io message: ' + String(data));
+        console.log(messagesToDisplay);
         const message = JSON.parse(data); // Parse the JSON message
         setMessagesToDisplay((prevMessages) => [
           ...prevMessages,
-          { key: prevMessages.length, content: message.content, isSystemMessage: message.isSystemMessage },
+          { key: prevMessages.length, content: message.message, isSystemMessage: message.isSystemMessage },
         ]);
       } catch (error) {
         console.error('Error parsing WebSocket message:', error);
@@ -48,7 +49,7 @@ export default function ChatWindow() {
     return () => {
       socket.off('server_message');
     };
-  }, [socket])
+  }, [socket, messagesToDisplay])
 
   async function handleSubmit(event) {
     //messagesSnapshot.push({key: messagesSnapshot.length, content: userInput.value, isSystemMessage: false });
@@ -58,8 +59,7 @@ export default function ChatWindow() {
     const form = event.target;
     const userInput = form.elements.namedItem("userInput");
     
-    //socket.timeout(5000).emit('user_message', {'userid': userId, 'message': userInput.value}, () => {
-    socket.timeout(5000).emit('user_message', '{"userid": "abc", "message": "t123"}', () => {
+    socket.timeout(5000).emit('user_message', {'userid': userId, 'message': userInput.value}, () => {
       userInput.value = '';
       setUserInputButtonIsDisabled(false);
     });
