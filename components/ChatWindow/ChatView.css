@@ -1,0 +1,52 @@
+/* ChatWindow.css */
+.chat-window {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow-y: auto;
+    height: 500px; /* Adjust as needed */
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse; /* Display latest messages at the bottom */
+    background-color: #fff; /* Set background to white */
+    width: 100%; /* Default to 100% width for mobile */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Media query for desktop browsers (min-width: 768px is a common breakpoint) */
+  @media (min-width: 768px) {
+    .chat-window {
+      max-width: 60%; /* Limit width to 60% on desktop */
+    }
+  }
+  
+  .message-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .message {
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    clear: both; /* Prevent floating issues */
+    max-width: 80%; /* Adjust as needed */
+  }
+  
+  .user-message {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green text */
+    align-self: flex-end; /* Align user messages to the right */
+  }
+  
+  .assistant-message {
+    background-color: #cce5ff; /* Light blue */
+    color: #004085; /* Dark blue text */
+    align-self: flex-start; /* Align AI messages to the left */
+  }
+  
+  .message-content {
+    white-space: pre-wrap; /* Preserve line breaks and spacing */
+  }

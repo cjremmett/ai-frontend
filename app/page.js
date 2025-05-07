@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import ChatWindow from "@/components/ChatWindow/ChatWindow";
+import ChatWindow2 from "@/components/ChatWindow/ChatWindow2";
 import styles from "./page.module.css";
 import { socket } from '../socket';
 import { ConnectionState } from '../components/ConnectionState';
@@ -40,11 +40,7 @@ export default function Home() {
   return (
     <>
       <h1 className={ styles.cjremmett_header}><a className = { styles.cjremmett_link } href="https://cjremmett.com">cjremmett.com</a></h1>
-      <ChatWindow />
-      <ConnectionState isConnected={ isConnected } />
-      <Events events={ fooEvents } />
-      <ConnectionManager />
-      <MyForm />
+      <ChatWindow2 />
     </>
   );
 }
