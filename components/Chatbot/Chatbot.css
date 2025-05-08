@@ -1,0 +1,43 @@
+.chatbot-container {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* Left pane width, remaining for right */
+    grid-template-rows: auto 80px 1fr auto; /* Auth, Input, Messages, Input Area */
+    height: 80vh; /* Adjust as needed */
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  .auth-info-pane {
+    grid-column: 1 / -1;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .message-view-pane {
+    grid-column: 2;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .message {
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-break: break-word;
+  }
+  
+  .user-message {
+    background-color: #c6f7c6; /* Light green */
+    align-self: flex-end;
+  }
+  
+  .assistant-message {
+    background-color: #b0e0e6; /* Light blue */
+    align-self: flex-start;
+  }

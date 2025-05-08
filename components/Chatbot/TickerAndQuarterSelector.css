@@ -1,0 +1,7 @@
+.chat-input-pane {
+    grid-column: 2;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+  }
