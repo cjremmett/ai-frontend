@@ -46,7 +46,7 @@ function Chatbot() {
     //     }
     //   ]
 
-  const [selectedChat, setSelectedChat] = useState('dummy');
+  const [selectedChat, setSelectedChat] = useState('newchat');
   
   useEffect(() => {
     // Uses a dummy chat element to respresent the new chat window
@@ -74,7 +74,7 @@ function Chatbot() {
         setMessages([
             [
                 "assistant",
-                "Please enter a stock ticker and select a quarter. You can ask the AI assistant questions about information contained in the earnings call transcript for the chosen company and quarter, even if the transcript was released subsequent to the AI's knowledge cutoff."
+                "Please enter a stock ticker and select a quarter. The AI will use RAG to answer questions about the earnings call transcript for that quarter, even if it falls outside the model's knowledge cutoff."
             ]
         ])
     }
