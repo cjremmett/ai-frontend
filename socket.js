@@ -1,6 +1,7 @@
 import { io } from 'socket.io-client';
 
-const URL = 'https://cjremmett.com';
+//const URL = 'https://cjremmett.com';
+const URL = 'localhost';
 
 export const socket = io(URL, {path: "/flask/socket.io"});
 

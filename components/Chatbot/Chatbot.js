@@ -96,14 +96,14 @@ function Chatbot() {
 
   const handleNewChat = () => {
     if (currentTicker && currentQuarter) {
-      const newChatKey = `${currentTicker}-${currentQuarter}`;
+      const newChatKey = `${currentTicker} - ${currentQuarter}`;
       if (!chats.some(chat => chat.key === newChatKey)) {
         setChats([...chats, { key: newChatKey, ticker: currentTicker, quarter: currentQuarter }]);
       }
       setSelectedChat(newChatKey);
       setMessages([]);
     } else {
-      alert('Please enter a stock ticker and select a year and quarter.');
+      alert('Please enter a stock ticker and select a year and quarter before starting a new chat.');
     }
   };
 
